@@ -1,7 +1,7 @@
 # Build stage
-FROM jelastic/maven:3.9.8-openjdk-21.0.2-almalinux-9 AS build
+FROM maven:3.9.7-eclipse-temurin-21-alpine AS build
 COPY . .
-RUN mvn clean package -Pprod
+RUN mvn clean package
 
 # Package stage
 FROM openjdk:21-jdk-slim
